@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>micromedium</title>
+	<script src="prototype_files/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="prototype_files/jquery-ui-1.7.2.custom.min.js" type="text/javascript" charset="utf-8"></script>	
+	
+	<style type="text/css" media="screen">
+		.droppable {
+			font-size: 6pt;
+		}
+	</style>
+</head>
+
+<body style="position:relative;">
+	
+	<div id="name2" class="droppable" style="border: 1px solid black; position: absolute; left: 20px; width: 380px; background-color: white; top: 0px; height: 28px;"><img src="prototype_files/title.png" width="450" height="100" alt="Title"></div>
+	
+	<div id="name" class="droppable" style="position:absolute; top:138px; left: 20px; width: 380px; height: 20px; background-color: white; border:1px solid black;"><input type="text" name="some_name" value="" id="some_name" size='53'></div>
+
+	<div id="name1" class="droppable-image" style="border: 1px solid black; position: absolute; left: 20px; width: 380px; background-color: white; top: 165px; height: 175px; overflow:hidden;"></div>
+
+	<div id="name2" class="droppable" style="border: 1px solid black; position: absolute; left: 20px; width: 380px; background-color: white; top: 343px; height: 28px;"></div>
+	
+	<div id="name3" class="droppable" style="border: 1px solid black; position: absolute; left: 20px; background-color: white; top: 378px; height: 61px; width: 95px;"></div>
+
+	<div id="name4" class="droppable" style="border: 1px solid black; position: absolute; left: 20px; background-color: white; top: 448px; width: 95px; height: 226px;"></div>
+
+	<div id="name5" class="droppable" style="border: 1px solid black; position: absolute; left: 20px; background-color: white; top: 448px; width: 95px; height: 226px;"></div>
+
+	<div id="name6" class="droppable" style="border: 1px solid black; position: absolute; left: 20px; background-color: white; top: 448px; width: 95px; height: 226px;"></div>
+
+	<div id="name7" class="droppable" style="border: 1px solid black; position: absolute; background-color: white; left: 119px; top: 378px; height: 25px; width: 282px;"></div>
+
+	<div id="name8" class="droppable" style="border: 1px solid black; position: absolute; background-color: white; left: 119px; top: 407px; height: 105px; width: 282px;"></div>
+
+
+	<img src="prototype_files/newspaperFront_large.jpg" width="521" height="800" alt="NewspaperFront Large">
+	<div id="news" style="position: absolute; top: 100px; left: 521px;">
+		<script src="http://www.gmodules.com/ig/ifr?url=http://jamocreations.com/widgets/dnews/igoogle.xml&amp;up_selectedTab=&amp;up_items_displayed=7&amp;up_Top_News=1&amp;up_Politik=0&amp;up_Wirtschaft=1&amp;up_Panorama=0&amp;up_Sport=1&amp;up_Entertainment=1&amp;up_Wissenschaft=0&amp;up_Netzwelt=0&amp;up_Kultur=0&amp;up_Kuriosa=0&amp;up_Kolumnen=0&amp;up_Altpapier=0&amp;synd=open&amp;w=320&amp;h=200&amp;title=Dnews.de+Nachrichten&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+		
+	</div>
+
+	<div id="mehrcontent" style="position: absolute; top: 350px; left: 521px;">
+		Meine Lokalen Nachrichten:
+		<ul>
+			<li class="draggable">Posaunenchor Kleine Brunnenstraße hat beim Straßenfest wieder zweimal aufgespielt. Wir suchen nach wie vor Musiker, die Interesse haben, bei uns mitzumachen. Proben Dienstag im Gemeindehaus. Auch Anfänger willkommen! Kontakt hier (<a href="http://www.posaunenchor.de">link</a>)
+			Tags: Links, Mitglieder des Posaunenchors, Ort, Uhrzeit Straßenfest
+			</li>
+			<li class="draggable">Vandalismus in der kleinen Brunnenstraße. Schon wieder lagen Samstag früh mehrere Buchsbäume des Friseurgeschäfts Haare ab (LINK) umgekippt auf der Straße. 
+			Tags: Ort, Uhrzeit, Wer hat das Foto gemacht
+			</li>
+		</ul>
+		
+		Bilder:
+		<img class="draggable" src="prototype_files/bild1.jpg" width="380"alt="Bild1">
+		
+		<script src="http://www.gmodules.com/ig/ifr?url=http://www.netip.de/google_gadgets/geo_map.xml&amp;synd=open&amp;w=200&amp;h=200&amp;title=Geo+Map+Client&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+
+	</div>
+	
+	<script type="text/javascript" charset="utf-8">
+		$(".draggable").draggable();
+		$(".droppable").droppable({
+					drop: function(event, ui) {
+						$(this).text(ui.draggable.text());
+						ui.draggable.remove();
+					}
+		});
+
+		$(".droppable-image").droppable({
+					drop: function(event, ui) {
+						$(this).append(ui.draggable);
+						ui.draggable.attr('style', '')
+					}
+		});
+
+		
+	</script>
+
+</body>
+</html>

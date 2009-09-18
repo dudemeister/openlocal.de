@@ -1,0 +1,30 @@
+<div id="name" style="float:left; width: 500px;overflow:auto-scroll;">
+	Feeds for: 
+	Geocode: <%= @geocode %>
+	Range:   <%= @range %>
+
+	<% @feeds.each do |feed| %>
+		<%= feed[0] %><br />
+		<ul>
+			<% feed[1].entries.each do |entry| %>
+			<li><%= entry.title %></li>
+			<% end %>
+		</ul>
+	<% end %>	
+</div>
+<br />
+<div id="photos" style="float:left; width:520px;height: 400px;overflow:auto;">
+	Flickr:
+	<br />
+	<% @flickr_images.each do |image| %>
+		<%= image_tag(image["photo_file_url"]) %>
+	<% end %>
+</div>
+<br />
+<div id="photos" style="float:left; width:520px;height: 400px;overflow:auto;">
+	Panoramico:
+	<br />
+	<% @panoramico_images.each do |image| %>
+		<%= image_tag(image["photo_file_url"]) %>
+	<% end %>
+</div>
