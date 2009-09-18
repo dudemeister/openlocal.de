@@ -1,0 +1,33 @@
+<p>
+  <b>Source:</b>
+  <%=h @image.source %>
+</p>
+
+<p>
+  <b>Creator:</b>
+  <%=h @image.creator %>
+</p>
+
+<p>
+  <b>Format:</b>
+  <%=h @image.format %>
+</p>
+
+<p>
+  <b>File:</b>
+  <%=h @image.file %>
+</p>
+
+<p>
+  <b>Geotag:</b>
+  <%=h @image.geotag %>
+</p>
+
+<p>
+  <b>Georange:</b>
+  <%=h @image.georange %>
+</p>
+
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

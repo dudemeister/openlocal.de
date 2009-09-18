@@ -1,0 +1,37 @@
+<h1>New article</h1>
+
+<% form_for(@article) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.hidden_field :issue_id, :value => @issue.id %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :caption %><br />
+    <%= f.text_area :caption %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :picture_id %><br />
+    <%= f.text_field :picture_id %>
+  </p>
+  <p>
+    <%= f.label :geotag %><br />
+    <%= f.text_field :geotag %>
+  </p>
+  <p>
+    <%= f.label :georange %><br />
+    <%= f.text_field :georange %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', articles_path %>

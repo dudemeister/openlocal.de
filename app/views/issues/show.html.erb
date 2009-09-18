@@ -1,0 +1,23 @@
+<p>
+  <b>Publish on:</b>
+  <%=h @issue.publish_on %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%=h @issue.status %>
+</p>
+
+<%= link_to 'New Article', new_article_path(:issue => @issue) %><br /><br />
+
+
+Articles:
+<ul>
+	<% @issue.articles.each do |article| %>
+		<li><%= link_to "#{article.title} - author: #{article.author}", article_path(article) %></li>
+	<% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_issue_path(@issue) %> |
+<%= link_to 'Back', issues_path %>

@@ -1,0 +1,36 @@
+<h1>Editing image</h1>
+
+<% form_for(@image) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :source %><br />
+    <%= f.text_area :source %>
+  </p>
+  <p>
+    <%= f.label :creator %><br />
+    <%= f.text_field :creator %>
+  </p>
+  <p>
+    <%= f.label :format %><br />
+    <%= f.text_field :format %>
+  </p>
+  <p>
+    <%= f.label :file %><br />
+    <%= f.text_field :file %>
+  </p>
+  <p>
+    <%= f.label :geotag %><br />
+    <%= f.text_field :geotag %>
+  </p>
+  <p>
+    <%= f.label :georange %><br />
+    <%= f.text_field :georange %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @image %> |
+<%= link_to 'Back', images_path %>

@@ -1,0 +1,36 @@
+<h1>Editing article</h1>
+
+<% form_for(@article) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :caption %><br />
+    <%= f.text_area :caption %>
+  </p>
+  <p>
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </p>
+  <p>
+    <%= f.label :picture_id %><br />
+    <%= f.text_field :picture_id %>
+  </p>
+  <p>
+    <%= f.label :geotag %><br />
+    <%= f.text_field :geotag %>
+  </p>
+  <p>
+    <%= f.label :georange %><br />
+    <%= f.text_field :georange %>
+  </p>
+  <p>
+    <%= f.submit "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'Back', articles_path %>

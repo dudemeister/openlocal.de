@@ -1,0 +1,33 @@
+<p>
+  <b>Title:</b>
+  <%=h @article.title %>
+</p>
+
+<p>
+  <b>Caption:</b>
+  <%=h @article.caption %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @article.author %>
+</p>
+
+<p>
+  <b>Picture:</b>
+  <%=h @article.picture_id %>
+</p>
+
+<p>
+  <b>Geotag:</b>
+  <%=h @article.geotag %>
+</p>
+
+<p>
+  <b>Georange:</b>
+  <%=h @article.georange %>
+</p>
+
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

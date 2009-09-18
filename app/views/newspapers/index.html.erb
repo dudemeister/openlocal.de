@@ -1,0 +1,28 @@
+<h1>Listing newspapers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Periodicity</th>
+    <th>Destination scope</th>
+    <th>User</th>
+	<th>No. Issues</th>
+  </tr>
+
+<% for newspaper in @newspapers %>
+  <tr>
+    <td><%=h newspaper.name %></td>
+    <td><%=h newspaper.periodicity %></td>
+    <td><%=h newspaper.destination_scope %></td>
+    <td><%=h newspaper.user_id %></td>
+	<td><%= h newspaper.issues.size %></td>
+    <td><%= link_to 'Show', newspaper %></td>
+    <td><%= link_to 'Edit', edit_newspaper_path(newspaper) %></td>
+    <td><%= link_to 'Destroy', newspaper, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New newspaper', new_newspaper_path %>

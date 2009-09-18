@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  publish_on: 2009-09-18
+  status: MyString
+
+two:
+  publish_on: 2009-09-18
+  status: MyString

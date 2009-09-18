@@ -1,0 +1,33 @@
+<p>
+  <b>Name:</b>
+  <%=h @newspaper.name %>
+</p>
+
+<p>
+  <b>Periodicity:</b>
+  <%=h @newspaper.periodicity %>
+</p>
+
+<p>
+  <b>Destination scope:</b>
+  <%=h @newspaper.destination_scope %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @newspaper.user_id %>
+</p>
+
+<%= link_to 'New Issue', new_issue_path(:newspaper => @newspaper) %><br /><br />
+
+
+Issues:
+<ul>
+	<% @newspaper.issues.each do |issue| %>
+		<li><%= link_to "#{issue.publish_on} - status: #{issue.status}", issue_path(issue) %></li>
+	<% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_newspaper_path(@newspaper) %> |
+<%= link_to 'Back', newspapers_path %>

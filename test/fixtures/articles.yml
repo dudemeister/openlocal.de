@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  caption: MyText
+  author: MyString
+  picture_id: 1
+  geotag: MyString
+  georange: MyString
+
+two:
+  title: MyString
+  caption: MyText
+  author: MyString
+  picture_id: 1
+  geotag: MyString
+  georange: MyString
